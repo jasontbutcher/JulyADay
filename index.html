@@ -133,24 +133,7 @@
   </section>
   <!-- // End Client Logos --> 
   
-  <script>$(function () {
-    var apiAppClient = function () {
-      baseUrl = 'https://adayapi.azurewebsites.net';
-      this.getAllContacts = function (contactHandler) {
-         $.get(baseUrl + '/', function (data) {
-            $.each(data, function (i, item) {
-              // todo: display contact
-              $( "div.section-title" ).text(item)
-            });
-          });
-       };
-        this.getContact = function (id, contactHandler) {
-          $.get(baseUrl + '/' + id, function (contact) {
-            // todo: display the contact email
-          });
-        };
-    }
-    </script>
+
 });
 </div>
 <!-- // Container Ends --> 
@@ -279,6 +262,25 @@
 <script src="js/typer.js"></script> 
 <script src="js/nicescroll.js"></script> 
 <script src="js/ketchup.all.js"></script> 
+
+  <script>$(function () {
+    var apiAppClient = function () {
+      baseUrl = 'https://adayapi.azurewebsites.net';
+      this.getAllContacts = function (contactHandler) {
+         $.get(baseUrl + '/', function (data) {
+            $.each(data, function (i, item) {
+              // todo: display contact
+              $( "div.section-title" ).text(i);
+            });
+          });
+       };
+        this.getContact = function (id, contactHandler) {
+          $.get(baseUrl + '/' + id, function (contact) {
+            // todo: display the contact email
+          });
+        };
+    }
+    </script>
 
 <!-- Typer --> 
 
