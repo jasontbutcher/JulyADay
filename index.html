@@ -133,6 +133,25 @@
   </section>
   <!-- // End Client Logos --> 
   
+  <script>$(function () {
+    var apiAppClient = function () {
+      baseUrl = 'https://adayapi.azurewebsites.net';
+      this.getAllContacts = function (contactHandler) {
+         $.get(baseUrl + '/', function (data) {
+            $.each(data, function (i, item) {
+              // todo: display contact
+              $( "div.section-title" ).text(item)
+            });
+          });
+       };
+        this.getContact = function (id, contactHandler) {
+          $.get(baseUrl + '/' + id, function (contact) {
+            // todo: display the contact email
+          });
+        };
+    }
+    </script>
+});
 </div>
 <!-- // Container Ends --> 
 
